@@ -1,0 +1,31 @@
+import { isNaNumber } from '../src/index'
+
+test('isNaNumber', () => {
+	expect(isNaNumber({})).toBe(true)
+	expect(isNaNumber(undefined)).toBe(true)
+	expect(isNaNumber(void 0)).toBe(true)
+	expect(isNaNumber(Array)).toBe(true)
+	expect(isNaNumber(ArrayBuffer)).toBe(true)
+	expect(isNaNumber(BigInt)).toBe(true)
+	expect(isNaNumber(Blob)).toBe(true)
+	expect(isNaNumber(Boolean)).toBe(true)
+	expect(isNaNumber(Buffer)).toBe(true)
+	expect(isNaNumber(Date)).toBe(true)
+	expect(isNaNumber(Error)).toBe(true)
+	expect(isNaNumber(Function)).toBe(true)
+	expect(isNaNumber(NaN)).toBe(true)
+	expect(isNaNumber(Number)).toBe(true)
+	expect(isNaNumber(Object)).toBe(true)
+	expect(isNaNumber(Promise)).toBe(true)
+	expect(isNaNumber(String)).toBe(true)
+	expect(isNaNumber(Symbol)).toBe(true)
+})
+
+test('NOT isNaNumber', () => {
+	expect(isNaNumber('')).toBe(false)
+	expect(isNaNumber([])).toBe(false)
+	expect(isNaNumber(false)).toBe(false)
+	expect(isNaNumber(null)).toBe(false)
+	expect(isNaNumber(true)).toBe(false)
+	expect(isNaNumber(Infinity)).toBe(false)
+})

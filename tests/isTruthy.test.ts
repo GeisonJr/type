@@ -1,0 +1,38 @@
+import { isTruthy } from '../src/index'
+
+test('isTruthy', () => {
+	expect(isTruthy('a')).toBe(true)
+	expect(isTruthy(['a'])).toBe(true)
+	expect(isTruthy({ a: 0 })).toBe(true)
+	expect(isTruthy(1)).toBe(true)
+	expect(isTruthy(true)).toBe(true)
+})
+
+test('NOT isTruthy', () => {
+	expect(isTruthy('')).toBe(false)
+	expect(isTruthy([])).toBe(false)
+	expect(isTruthy({})).toBe(false)
+	expect(isTruthy(0)).toBe(false)
+	expect(isTruthy(false)).toBe(false)
+	expect(isTruthy(null)).toBe(false)
+	// expect(isTruthy(true)).toBe(false)
+	expect(isTruthy(undefined)).toBe(false)
+	expect(isTruthy(void 0)).toBe(false)
+
+	expect(isTruthy(Array)).toBe(false)
+	// expect(isTruthy(ArrayBuffer)).toBe(false)
+	expect(isTruthy(BigInt)).toBe(false)
+	// expect(isTruthy(Blob)).toBe(false)
+	expect(isTruthy(Boolean)).toBe(false)
+	// expect(isTruthy(Buffer)).toBe(false)
+	expect(isTruthy(Date)).toBe(false)
+	// expect(isTruthy(Error)).toBe(false)
+	expect(isTruthy(Function)).toBe(false)
+	// expect(isTruthy(Infinity)).toBe(false)
+	// expect(isTruthy(NaN)).toBe(false)
+	expect(isTruthy(Number)).toBe(false)
+	expect(isTruthy(Object)).toBe(false)
+	expect(isTruthy(Promise)).toBe(false)
+	expect(isTruthy(String)).toBe(false)
+	expect(isTruthy(Symbol)).toBe(false)
+})
