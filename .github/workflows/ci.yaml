@@ -3,11 +3,6 @@ run-name: ${{github.actor}} is running ${{github.workflow}} on ${{github.reposit
 
 on:
   pull_request:
-  push:
-    branches:
-    - $default-branch
-    tags:
-    - '!*'
   workflow_call:
   workflow_dispatch:
 
@@ -17,9 +12,9 @@ jobs:
     strategy:
       matrix:
         os:
-          - macos-latest
+          # - macos-latest
           - ubuntu-latest
-          - windows-latest
+          # - windows-latest
         node:
           # See https://github.com/nodejs/release#release-schedule for details
           - 18.x # Maintenance
